@@ -86,4 +86,16 @@ if (n >= 1 and n <= 100):
             linha = re.sub(palavra, simbolo, linha)
         print(linha)
   
+
+n = int(input())
+arr = map(int, input().split())
+#retira as duplicadas com o set, ordana em uma lista
+arraynova = list(set(arr))
+#ordenar do menor para o maior
+arraynova.sort()
+
+#adiciona uma das restricoes e printa o segundo maior valor, caso fosse o maior valor seria -1
+if (n >= 2 and n <= 10):
+    print (arraynova[-2])    
+
     
