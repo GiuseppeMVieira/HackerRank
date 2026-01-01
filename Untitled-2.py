@@ -63,4 +63,27 @@ elif n >= 2 and n <= 5:
 else:
     print ('Not Weird')          
     
+
+
+  import re
+
+#input do número de linhas
+n = int(input())
+
+#definição do que deve ser substituído, e pelo que deve ser substituído
+palavras = {
+    r"(?<= )\|\|(?= )": "or",
+    r"(?<= )&&(?= )": "and"    
+    }
+ #definição da restrição 
+if (n >= 1 and n <= 100):
+    #leitura das linhas
+    for tamanho in range(n):
+        #cada linha vai ser lida de maneira independente
+        linha = input()
+        #substituição das palavras conforme o dicionário        
+        for palavra, simbolo in palavras.items():
+            linha = re.sub(palavra, simbolo, linha)
+        print(linha)
+  
     
