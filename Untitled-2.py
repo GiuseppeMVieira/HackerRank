@@ -96,6 +96,29 @@ arraynova.sort()
 
 #adiciona uma das restricoes e printa o segundo maior valor, caso fosse o maior valor seria -1
 if (n >= 2 and n <= 10):
-    print (arraynova[-2])    
+    print (arraynova[-2])   
+
+
+
+    #definir uma lista vazia para receber os valores 
+estudantes = []
+
+#adicionar os nomes e os scores no formato de uma lista 
+for i in range(int(input())):
+    nome = input()
+    score = float(input())
+    #o append é utilizado para colocar o nome no final da lista
+    estudantes.append([nome, score])
+
+#ordena os scores no formato de uma lista e pega apenas os scores
+scores = sorted(list(set([estudantes[1] for estudantes in estudantes])))    
+
+segundoMenorNota = scores[1]
+
+#o estudante indice 0 representa o "nome", ou seja, pega apenas os nomes que possuem a segundo menor nota
+nomesFinal = sorted([estudante[0] for estudante in estudantes if estudante[1] == segundoMenorNota])
+
+for nome in nomesFinal:
+    print(nome) 
 
     
